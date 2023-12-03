@@ -1,18 +1,5 @@
 # Laravel
 
-## Migraciones
-
-- Sincroniza la base de datos con las migraciones que tengamos en `database/migrations`
-```bash
-php artisan migrate
-```
-
-- Crear migración
-
-```bash
-php artisan make:migration create_name_table
-```
-
 ## Instalaciones
 
 -   Instalamos gestionador de paquetes de LARAVEL (Si ya lo instalaste NO Volver a instalar):
@@ -57,4 +44,49 @@ Entre doble moustache podemos agregar las diferentes directivas para que Blade e
 
 ```html
 <img src="{{ asset('assets/img/1.jpg') }}" alt="My card 1" />
+```
+
+## Migraciones
+
+1. CREAR migración
+
+```bash
+php artisan make:migration create_name_table
+```
+
+2. SINCRONIZA la base de datos con las migraciones que tengamos en `database/migrations`
+```bash
+php artisan migrate
+```
+
+3. REVERTIR LA ULTIMA migración
+
+```bash
+php artisan migrate:rollback
+```
+
+4. REVERTIR UNA MIGRACIÓN EN ESPECÍFICO por el número de Lote (BATCH)
+
+```bash
+php artisan migrate:rollback --batch=2
+```
+
+5. REVERTIR TODAS las migraciones con un solo comando
+
+```bash
+php artisan migrate:reset
+```
+
+6. REVERTIR TODAS LAS MIGRACIONES Y CREAR UNA NUEVA migracion con un solo comando
+
+```bash
+php artisan migrate:refresh
+```
+
+### IMPORTANTE: No se recomienda REVERTIR ya que si tenemos claves foraneas podría dar error. En cambio deberemos crear una ACTUALIZACIÓN de la migración
+
+7. ACTUALIZACIÓN: Crear actualización de la migración
+
+```bash
+php artisan make:migration update_name_table
 ```
