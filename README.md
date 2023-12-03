@@ -90,3 +90,17 @@ php artisan migrate:refresh
 ```bash
 php artisan make:migration update_name_table
 ```
+
+# Models
+
+1. Crear model
+
+```bash
+php artisan make:model Name
+```
+
+## Crear modelo con respecto a la migracion
+
+```bash
+php artisan make:model Name --migration
+```
